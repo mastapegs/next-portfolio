@@ -16,20 +16,18 @@ const Header = () => {
     <>
       <Navbar bg="light" expand="lg">
         <Navbar.Brand>
-          <Link href="/">
-            <a>Matthew Pagan</a>
-          </Link>
+          Matthew Pagan
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             {links.map(({ href, text }) => {
               return (
-                <Nav.Item>
-                  <Link href={href}>
-                    <a>{text}</a>
-                  </Link>
-                </Nav.Item>
+                <Link href={href}>
+                  <Nav.Link href={href}>
+                    {text}
+                  </Nav.Link>
+                </Link>
               );
             })}
           </Nav>
