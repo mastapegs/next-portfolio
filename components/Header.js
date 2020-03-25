@@ -16,7 +16,7 @@ const Header = () => {
     <Navbar bg="light" expand="lg">
       <Navbar.Brand>
         <Link href="/">
-          Matthew Pagan
+          <a>Matthew Pagan</a>
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -26,7 +26,7 @@ const Header = () => {
             return (
               <Nav.Link>
                 <Link href={href}>
-                  {text}
+                  <a>{text}</a>
                 </Link>
               </Nav.Link>
             );
