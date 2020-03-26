@@ -2,7 +2,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Link from 'next/link'
 const Header = () => {
-  const links = [
+  const pages = [
     {
       href: "/",
       text: "Home"
@@ -25,7 +25,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
-            {links.map(({ href, text }) => {
+            {pages.map(({ href, text }) => {
               return (
                 <Link href={href} passHref>
                   <Nav.Link>
