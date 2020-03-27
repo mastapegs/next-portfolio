@@ -13,9 +13,11 @@ const Contact = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(name);
-    console.log(email);
-    console.log(message);
+    console.table({
+      name,
+      email,
+      message
+    })
   }
 
   return (
@@ -32,6 +34,10 @@ const Contact = () => {
           <Alert.Heading>🚧 Still Implementing Back-end 🚧</Alert.Heading>
           <p>
             I'm still in the process of building out the back-end of this form to actually get your message from you, to me.
+          </p>
+          <hr />
+          <p>
+            I do console.table the form data onSubmit if you'd like to test it out 😉
           </p>
         </Alert>
         <hr />
