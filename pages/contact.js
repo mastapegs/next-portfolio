@@ -26,14 +26,16 @@ const Contact = () => {
           Your friendly neighborhood web developer 🕸️
         </p>
       </Jumbotron>
-      <Alert variant="warning">
-        <Alert.Heading>🚧 Still Implementing Back-end 🚧</Alert.Heading>
-        <p>
-          I'm still in the process of building out the back-end of this form to actually get your message from you, to me.
-        </p>
-      </Alert>
-      <hr />
       <Container>
+
+        <Alert variant="warning">
+          <Alert.Heading>🚧 Still Implementing Back-end 🚧</Alert.Heading>
+          <p>
+            I'm still in the process of building out the back-end of this form to actually get your message from you, to me.
+          </p>
+        </Alert>
+        <hr />
+
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="name">
             <Form.Label>Your Name</Form.Label>
