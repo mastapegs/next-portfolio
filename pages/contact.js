@@ -1,13 +1,35 @@
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import Container from 'react-bootstrap/Container'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 const Contact = () => {
   return (
     <>
       <Jumbotron>
         <h1>Contact me!</h1>
         <p>
-          I absolutely love coding. It's more than a hobby I'd say. I'm sure I'm not the only one who feels this way, so if you love coding like this guy, and want to network, fill out the form below and say hello!
+          Your friendly neighborhood web developer 🕸️
         </p>
       </Jumbotron>
+      <Container>
+        <Form>
+          <Form.Group controlId="name">
+            <Form.Label>Your Name</Form.Label>
+            <Form.Control type="text" placeholder="Your name" />
+          </Form.Group>
+          <Form.Group controlId="email">
+            <Form.Label>Your Email</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+          </Form.Group>
+          <Form.Group controlId="message">
+            <Form.Label>Your Message</Form.Label>
+            <Form.Control as="textarea" row="4" placeholder="Your message" />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </Container>
     </>
   );
 }
