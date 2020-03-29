@@ -8,7 +8,7 @@ export default (req, res) => {
   console.table(req.body);
   const { name, email, message } = req.body;
 
-  mongoose.connect(process.env.atlasURI, {useNewUrlParser: true});
+  mongoose.connect(process.env.atlasuri, {useNewUrlParser: true});
   const db = mongoose.connection;
   db.on('error', console.error.bind(console, 'connection error:'));
   db.once('open', function() {
