@@ -15,21 +15,21 @@ export default (req, res) => {
   db.once('open', function() {
     console.log("Connected to Atlas");
 
-    const newSubmit = new ContactSubmit({
-      name,
-      email,
-      message
-    });
-    console.log(newSubmit)
+    // const newSubmit = new ContactSubmit({
+    //   name,
+    //   email,
+    //   message
+    // });
+    // console.log(newSubmit)
 
-    newSubmit.save((err)=>{
-      if (err) return err;
-      console.log("New Submission");
-    });
+    // newSubmit.save((err)=>{
+    //   if (err) return err;
+    //   console.log("New Submission");
+    // });
 
   });
 
   res.statusCode = 200
   res.setHeader('Content-Type', 'application/json')
-  res.end(JSON.stringify({ message: "Success" }))
+  res.end(JSON.stringify(req.body))
 }
