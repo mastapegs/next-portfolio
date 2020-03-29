@@ -36,6 +36,11 @@ const Contact = () => {
     });
     const responseJSON = await response.json();
     console.table(responseJSON);
+
+
+    setName("");
+    setEmail("");
+    setMessage("");
   }
 
   return (
