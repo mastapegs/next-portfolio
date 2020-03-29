@@ -8,6 +8,7 @@ export default (req, res) => {
   console.table(req.body);
   const { name, email, message } = req.body;
 
+  console.log(process.env.ATLASURI);
   mongoose.connect(process.env.ATLASURI, {useNewUrlParser: true});
   const db = mongoose.connection;
   db.on('error', console.error.bind(console, 'connection error:'));
