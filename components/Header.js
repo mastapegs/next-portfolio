@@ -27,7 +27,7 @@ const Header = () => {
           <Nav>
             {pages.map(({ href, text }) => {
               return (
-                <Link href={href} passHref>
+                <Link key={href} href={href} passHref>
                   <Nav.Link>
                     {text}
                   </Nav.Link>
