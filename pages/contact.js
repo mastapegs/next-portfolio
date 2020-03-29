@@ -11,13 +11,31 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
     console.table({
       name,
       email,
       message
-    })
+    });
+    const response = await fetch("/api/contactSubmits", {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify({
+        name,
+        email,
+        message
+      })
+    });
+    const responseJSON = await response.json();
+    console.table(responseJSON);
   }
 
   return (
