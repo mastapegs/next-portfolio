@@ -4,12 +4,22 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Alert from 'react-bootstrap/Alert'
 import { useState } from 'react'
+import Modal from 'react-bootstrap/Modal'
 
 const Contact = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => {
+    setShow(false);
+    setName("");
+    setEmail("");
+    setMessage("");
+  }
+  const handleShow = () => setShow(true);
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -35,12 +45,7 @@ const Contact = () => {
       })
     });
     const responseJSON = await response.json();
-    console.table(responseJSON);
-
-
-    setName("");
-    setEmail("");
-    setMessage("");
+    handleShow();
   }
 
   return (
@@ -52,6 +57,22 @@ const Contact = () => {
         </p>
       </Jumbotron>
       <Container>
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>😀 Thank you for reaching out to me!</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>
+            📧 I'll make sure to email you back at <strong>{email}</strong>
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <p>
+            🙏🏻 Thank you again {name}!
+            </p>
+          </Modal.Footer>
+        </Modal>
 
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="name">
