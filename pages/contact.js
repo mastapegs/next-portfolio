@@ -11,6 +11,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [disabled, setDisabled] = useState(false);
 
   const [show, setShow] = useState(false);
   const handleClose = () => {
@@ -18,11 +19,13 @@ const Contact = () => {
     setName("");
     setEmail("");
     setMessage("");
+    setDisabled(false);
   }
   const handleShow = () => setShow(true);
 
   const handleSubmit = async event => {
     event.preventDefault();
+    setDisabled(true);
     console.table({
       name,
       email,
@@ -64,12 +67,12 @@ const Contact = () => {
           </Modal.Header>
           <Modal.Body>
             <p>
-            📧 I'll make sure to email you back at <strong>{email}</strong>
+              📧 I'll make sure to email you back at <strong>{email}</strong>
             </p>
           </Modal.Body>
           <Modal.Footer>
             <p>
-            🙏🏻 Thank you again {name}!
+              🙏🏻 Thank you again {name}!
             </p>
           </Modal.Footer>
         </Modal>
@@ -103,7 +106,7 @@ const Contact = () => {
               value={message}
               onChange={() => setMessage(event.target.value)} />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button disabled={disabled} variant="primary" type="submit">
             Submit
           </Button>
         </Form>
