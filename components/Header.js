@@ -26,7 +26,7 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
+          <Nav activeKey={router.pathname}>
             {pages.map(({ href, text }) => {
               return (
                 <Link key={href} href={href} passHref>
