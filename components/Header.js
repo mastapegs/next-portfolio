@@ -10,12 +10,12 @@ const Header = () => {
       text: "Home"
     },
     {
-      href: "/contact",
-      text: "Contact Me"
-    },
-    {
       href: "/about",
       text: "About"
+    },
+    {
+      href: "/contact",
+      text: "Contact Me"
     }
   ];
   return (
